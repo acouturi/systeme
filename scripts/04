@@ -1,0 +1,8 @@
+touch /etc/crontab.sav
+sum=$(md5sum "/etc/crontab")
+read -r line</etc/crontab.sav
+if [ "$line" != "$sum" ]
+then
+	echo "File /etc/crontab have change new md5sum: $sum" | mail -s "crontab have changed" root
+fi
+echo $sum > /etc/crontab.sav

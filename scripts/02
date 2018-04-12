@@ -1,0 +1,2 @@
+(apt-get update; apt-get upgrade) > /var/log/update_script.log
+$on rajoute "0 4 * * 1 sh 02" dans la crontable
